@@ -344,8 +344,6 @@ public class ReversibleDeque<E> implements Deque<E>, List<E> {
     }
     
     private E removeHeadImpl() {
-        checkNotEmpty();
-        
         Node<E> nodeToRemove = head;
         E returnValue = nodeToRemove.value;
         
@@ -362,8 +360,6 @@ public class ReversibleDeque<E> implements Deque<E>, List<E> {
     }
     
     private E removeTailImpl() {
-        checkNotEmpty();
-        
         Node<E> nodeToRemove = tail;
         E returnValue = nodeToRemove.value;
         
