@@ -7,6 +7,8 @@ public class Application {
     private static final class CommandNames {
         static final String ADD_FIRST    = "af";
         static final String ADD_LAST     = "al";
+        static final String GET_FIRST    = "gf";
+        static final String GET_LAST     = "gl";
         static final String REMOVE_FIRST = "rf";
         static final String REMOVE_LAST  = "rl";
         static final String REVERT       = "rev";
@@ -66,6 +68,14 @@ public class Application {
     private void addFirst(String s) {
         deque.addFirst(s);
     }
+    
+    private String getFirst() {
+        return deque.getFirst();
+    }
+    
+    private String getLast() {
+        return deque.getLast();
+    }
 
     private void addLast(String s) {
         deque.addLast(s);
@@ -93,6 +103,14 @@ public class Application {
                 
             case CommandNames.REVERT:
                 commandRevert();
+                break;
+                
+            case CommandNames.GET_FIRST:
+                commandGetFirst();
+                break;
+                
+            case CommandNames.GET_LAST:
+                commandGetLast();
                 break;
                 
             case CommandNames.REMOVE_FIRST:
@@ -133,6 +151,14 @@ public class Application {
     private void commandAddLast(String arg) {
         addLast(arg);
         printDeque();
+    }
+    
+    private void commandGetFirst() {
+        System.out.println(deque.getFirst());
+    }
+    
+    private void commandGetLast() {
+        System.out.println(deque.getLast());
     }
     
     private void commandIsReverted() {
